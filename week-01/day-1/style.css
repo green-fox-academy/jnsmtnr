@@ -1,0 +1,42 @@
+#header {
+    padding: 15px 10% 15px 10%;
+    background-color: #333333;
+}
+
+#header-right {
+    float: right;
+    padding-top: 10px;
+}
+
+body {
+    margin: 0px;
+    background-image: url('img/topography.png');
+}
+
+h1 {
+    padding: 5% 10% 0% 10%;
+    font-family: 'Modern Antiqua', cursive;
+}
+
+h2 {
+    padding: 2% 10% 0% 10%;
+    font-family: 'Modern Antiqua', cursive;
+}
+
+h3 {
+    padding: 0% 10% 0% 10%;
+}
+
+p {
+    padding: 0% 10% 0% 10%;
+    font-family: consolas, courier;
+}
+
+a {
+    color: #ff0099;
+    padding-left: 30px;
+
+}
+.purple {
+    color: #ff0099;
+}
