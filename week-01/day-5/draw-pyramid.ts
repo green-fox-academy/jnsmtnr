@@ -22,9 +22,9 @@ for (let i: number = 0; i <lineCount; i++) {
 // Write a program that draws a
 // pyramid like this:
 //
-// 123*
-// 12***
-// 1*****
+//    *
+//   ***
+//  *****
 // *******
 //
 // The pyramid should have as many lines as lineCount is
