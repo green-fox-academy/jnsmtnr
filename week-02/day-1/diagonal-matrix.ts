@@ -14,14 +14,14 @@
 let matrix = [];
 let matrixSize = 4;
 for (let i: number = 0; i < matrixSize; i++) {
-    matrix.push([]);
-    for (let j: number = 0; j < matrixSize - i; j++) {
-        matrix[i].push(0);
+    let matrixRow = [];
+    for (let j: number = 0; j < matrixSize - i -1 ; j++) {
+        matrixRow.push(0);
     }
-    matrix[i].push(1);
-    for (let k: number = 0; k < i + 1; k++ ) {
-        matrix[i].push(0);  
+    matrixRow.push(1);
+    for (let k: number = 0; k < i; k++ ) {
+        matrixRow.push(0);  
     }
-    matrix.push(matrix[i]);
+    matrix.push(matrixRow);
 }
 console.log(matrix);
