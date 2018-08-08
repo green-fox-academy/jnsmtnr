@@ -15,6 +15,6 @@ function drawSquare( size:number, color: string ) {
     ctx.fillRect( canvas.width/2 - size/2, canvas.height/2 - size/2 ,size ,size );
 }
 
-for (let i:number = 400; i>0; i -= 20) {
+for (let i:number = 300; i>0; i -= 10) {
     drawSquare(i,rainbowColors[i % rainbowColors.length]);
 }
