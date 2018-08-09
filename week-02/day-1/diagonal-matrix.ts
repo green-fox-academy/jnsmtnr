@@ -12,7 +12,7 @@
 // ** Relax, a matrix is just like an array
 
 let matrix = [];
-let matrixSize = 4;
+let matrixSize = 10;
 for (let i: number = 0; i < matrixSize; i++) {
     let matrixRow = [];
     for (let j: number = 0; j < matrixSize - i -1 ; j++) {

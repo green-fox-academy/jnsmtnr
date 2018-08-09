@@ -17,7 +17,7 @@ function drawSquare( size:number, color: string ) {
 }
 
 for (let i:number = 400; i>0; i -= lineWidth) {
-    drawSquare(i,rainbowColors[i % rainbowColors.length]);
+    drawSquare(i,rainbowColors[i/lineWidth % rainbowColors.length]);
 }}
 
 rainBowBox (10);
