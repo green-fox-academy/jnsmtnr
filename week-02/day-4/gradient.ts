@@ -15,6 +15,6 @@ function leftToRightGradient(leftColor: number[], rightColor: number[], numberOf
 
 let leftSideColorInRGB: number[] = [255,100,0];
 let rightSideColorInRGB: number[] = [0,100,255];
-let numberOfSteps: number = 100;
+let numberOfSteps: number = 10;
 
 leftToRightGradient(leftSideColorInRGB,rightSideColorInRGB,numberOfSteps);
