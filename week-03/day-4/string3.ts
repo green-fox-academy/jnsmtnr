@@ -2,8 +2,8 @@
 // adjacent chars are now separated by a '*'.
 
 function asterixAdder(myString: string, n: number): string {
-  if (myString.charAt(n) == '') {
-    return '';
+  if (n == myString.length -1) {
+    return myString.charAt(n);
   } else  {
     return myString.charAt(n) + '*' + asterixAdder(myString, n+1);
   }
