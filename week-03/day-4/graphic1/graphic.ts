@@ -15,6 +15,6 @@ function fourSquares(x,y, size, i) {
   fourSquares(x + size/3, y + size/3*2, size /3, i+1);
   }
 }
-ctx.fillStyle= 'yellow';
+ctx.fillStyle= 'blue';
 ctx.fillRect(0,0,canvas.width,canvas.height);
 fourSquares(0,0,canvas.height,0);
