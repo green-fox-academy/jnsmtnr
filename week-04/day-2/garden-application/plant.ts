@@ -1,8 +1,8 @@
 export class Plant {
-  protected color: string;
-  protected currentWaterAmount: number;
-  protected waterAbsorb: number;
-  protected waterNeeded: number;
+  color: string;
+  currentWaterAmount: number;
+  waterAbsorb: number;
+  waterNeeded: number;
 
   constructor(color: string, waterAbsorb: number, waterNeeded: number) {
     this.color = color;
