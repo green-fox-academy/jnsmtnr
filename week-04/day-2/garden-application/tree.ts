@@ -1,8 +1,8 @@
 import { Plant } from "./plant";
 
-export class Flower extends Plant {
+export class Tree extends Plant {
 
   constructor(color: string) {
-    super(color, 0.75, 5);
+    super(color, 0.4, 10);
   }
 }
