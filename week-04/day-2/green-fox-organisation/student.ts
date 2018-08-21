@@ -20,7 +20,3 @@ export class Student extends Person {
     this.skippedDays += numberOfDays;
   }
 }
-
-let student: Student = new Student();
-student.introduce();
-student.getGoal();
