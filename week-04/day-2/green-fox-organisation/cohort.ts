@@ -1,7 +1,7 @@
 import { Student } from "./student";
 import { Mentor } from "./mentor";
 
-class Cohort {
+export class Cohort {
   name: string;
   students: Student[];
   mentors: Mentor[];
