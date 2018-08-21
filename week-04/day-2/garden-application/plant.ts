@@ -17,9 +17,9 @@ export class Plant {
   
   needWater() {
     if (this.currentWaterAmount < this.waterNeeded) {
-      console.log(`This ${this.color} ${this.constructor['name']} needs water`); 
+      console.log(`The ${this.color} ${this.constructor['name']} needs water`); 
     } else {
-      console.log(`This ${this.color} ${this.constructor['name']} doesnt need water`); 
+      console.log(`The ${this.color} ${this.constructor['name']} doesnt need water`); 
     }
   }
 }
