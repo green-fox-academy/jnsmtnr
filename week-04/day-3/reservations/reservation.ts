@@ -2,13 +2,14 @@ import { Reservationy } from "./reservationy";
 
 export class Reservation implements Reservationy {
   getDowBooking(): string {
-    throw new Error("Method not implemented.");
+    let arrayDay: string[] = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'];
+    return arrayDay[Math.floor(Math.random()*7)];
   }
   getCodeBooking(): string {
-    throw new Error("Method not implemented.");
+    return 'randomstring';
   }
   reservation(): string {
-    return 'Booking# ' + 'for '
+    return 'Booking# ' + this.getCodeBooking() + ' for ' + this.getDowBooking();
   }
 
 }
