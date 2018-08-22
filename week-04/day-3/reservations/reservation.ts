@@ -6,7 +6,12 @@ export class Reservation implements Reservationy {
     return arrayDay[Math.floor(Math.random()*7)];
   }
   getCodeBooking(): string {
-    return 'randomstring';
+    let charSet: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    let randomstring: string = '';
+    for (let i: number = 0; i < 8; i++) {
+      randomstring += charSet.charAt(Math.floor(Math.random()*charSet.length));
+    }
+    return randomstring;
   }
   reservation(): string {
     return 'Booking# ' + this.getCodeBooking() + ' for ' + this.getDowBooking();
