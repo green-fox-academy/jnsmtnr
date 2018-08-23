@@ -8,7 +8,7 @@ class Apple {
 
 test('testing getApple() method', (t) => {
   let apple: Apple = new Apple ();
-  t.equal(apple.getApple(), 'Apple');
+  t.equal(apple.getApple(), 'apple');
   t.end();
 });
 
