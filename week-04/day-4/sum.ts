@@ -1,5 +1,9 @@
 export class MyClass {
   sum(list: number[]) {
-    return list;
+    let sum: number = 0;
+    list.forEach( number => {
+      sum += number;
+    })
+    return sum;
   }
 }
