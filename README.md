@@ -7,4 +7,4 @@
 
 [coffee-syllabus repo](https://github.com/green-fox-academy/coffee-syllabus/)
 
-[toda app](https://github.com/jnsmtnr/todo-app/)
+[todo app](https://github.com/jnsmtnr/todo-app/)
