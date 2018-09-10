@@ -1,0 +1,67 @@
+body {
+  margin: auto;
+  width: 1200px;
+}
+
+nav {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100px;
+  background-color: rgb(176,42,255);
+}
+
+.navitem {
+  height: 50px;
+  align-self: center;
+  margin-left: 20px;
+}
+
+.nav1 {
+  width: 200px;
+  margin-left: 30px;
+}
+
+.nav2 {
+  width: 150px;
+}
+
+.nav3 {
+  width: 175px;
+}
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  width: 100%;
+  height: 500px;
+}
+
+.main {
+  align-self: flex-end;
+  width: 200px;
+  height: 100%;
+  flex-grow: 2;
+}
+
+.side {
+  align-self: flex-end;
+  height: 100%;
+  width: 200px;
+  flex-grow: 1;
+}
+
+.yellow {
+  background-color: rgb(255,214,42);
+}
+
+.green {
+  background-color: rgb(81,212,0);
+}
+
+.cyan {
+  background-color: rgb(42,234,255);
+}
