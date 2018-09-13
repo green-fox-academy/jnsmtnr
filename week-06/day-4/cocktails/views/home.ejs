@@ -3,12 +3,25 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Coctails</title>
+  <title>Cocktails</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="static/style.css" />
   <script src="main.js"></script>
 </head>
 <body>
-  test 123
+  <h1>Cocktails</h1>
+  <a class="alcoholList" href='/'>all</a></div>
+  <table>
+    <tr>
+      <th>NAME</th>
+      <th>PRICE</th>
+    </tr>
+    <% for (let i=0; i < cocktails.length; i++) { %>
+      <tr>
+        <td><%= cocktails[i].name %><br>ingrediens</td>
+        <td><%= cocktails[i].price %> Ft</td>
+      </tr>
+    <% } %>
+  </table>
 </body>
 </html>

@@ -14,14 +14,17 @@ const cocktails = [
   { name: 'LONG ISLAND ICE TEA', price: 2450, contains: ['vodka', 'rum', 'gin', 'tequila', 'triple sec', 'cola'], isAlcoholic: true },
   { name: 'VIRGIN MOJITO', price: 990, contains: ['sugar', 'lime juice', 'soda water'], isAlcoholic: false },
   { name: 'SAFE SEX ON THE BEACH', price: 990, contains: ['peach schnapps', 'orange juice', 'cranberry juice'], isAlcoholic: false },
-]; 
+];
 
-app.use('/assets', express.static('assets'))
+const alcoholList = ['gin', 'vodka', 'rum', 'tequila'];
+
+app.use('/static', express.static('static'))
 
 app.set('view engine', 'ejs');
 
 app.get('/', (req,res) => {
   res.render('home', {
+    alcoholList: alcoholList,
     cocktails: cocktails,
   });
 });
