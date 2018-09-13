@@ -12,3 +12,13 @@ const todos = [
 ];
 
 app.set('view engine', 'ejs');
+
+app.get('/', function(req,res) {
+  res.render('home', {
+    todoarray: todos
+  });
+});
+
+app.listen(PORT, () => {
+  console.log(`server is running, port ${PORT}`);
+});
