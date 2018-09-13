@@ -23,11 +23,20 @@ app.use('/static', express.static('static'))
 app.set('view engine', 'ejs');
 
 app.get('/', (req,res) => {
+  if (req.query.alcohol) {
+    let newCocktails = cocktails.filter(coctail => coctail.contains.indexOf(req.query.alcohol) != -1);
+    res.render('home', {
+      alcoholList: alcoholList,
+      cocktails: newCocktails,
+    });  
+  } else { 
   res.render('home', {
     alcoholList: alcoholList,
     cocktails: cocktails,
   });
+  }
 });
+
 
 app.listen(PORT, () => {
   console.log(`server is running, port ${PORT}`);
