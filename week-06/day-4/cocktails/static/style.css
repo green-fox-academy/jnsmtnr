@@ -1,5 +1,11 @@
+.alcoholSelector {
+  display: flex;
+}
+
 a.alcoholList {
   text-transform: uppercase;
+  align-self: flex-end;
+  margin-right: 10px;
 }
 
 table, th, td {
