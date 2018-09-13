@@ -1,0 +1,1 @@
+console.log('hello, world! this time from an outer script file');
