@@ -1,3 +1,14 @@
+body {
+  padding-left: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+}
+
 .alcoholSelector {
   display: flex;
 }
@@ -9,6 +20,29 @@ a.alcoholList {
 }
 
 table, th, td {
-  border: 1px solid black;
+  border: 2px solid white;
   border-collapse: collapse;
+  padding: 10px;
+}
+
+th {
+  background-color: black;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: lightgrey;
+}
+
+td.alcohol {
+  min-width: 400px;
+}
+
+td.price {
+  text-align: center;
+  vertical-align: center;
+}
+
+tr.beer {
+  background-color: green;
 }

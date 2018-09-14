@@ -16,6 +16,10 @@ const cocktails = [
   { name: 'SAFE SEX ON THE BEACH', price: 990, contains: ['peach schnapps', 'orange juice', 'cranberry juice'], isAlcoholic: false },
 ];
 
+const beer = { name: 'BEER', price: 500, contains: ['served cold', 'in a clean glass'], isAlcoholic: true };
+
+cocktails.push(beer);
+
 const alcoholList = ['gin', 'vodka', 'rum', 'tequila'];
 
 app.use('/static', express.static('static'))
@@ -25,11 +29,12 @@ app.set('view engine', 'ejs');
 app.get('/', (req,res) => {
   if (req.query.alcohol) {
     let newCocktails = cocktails.filter(coctail => coctail.contains.indexOf(req.query.alcohol) != -1);
+    newCocktails.push(beer);
     res.render('home', {
       alcoholList: alcoholList,
       cocktails: newCocktails,
     });  
-  } else { 
+  } else {
   res.render('home', {
     alcoholList: alcoholList,
     cocktails: cocktails,

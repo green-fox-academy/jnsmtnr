@@ -10,12 +10,12 @@
 </head>
 <body>
   <h1>Cocktails</h1>
-  <div class='alcoholSelector'>
+  <p class='alcoholSelector'>
     <a class="alcoholList" href='/'>all</a>
     <% for (let i=0; i < alcoholList.length; i++) { %>
       <a class="alcoholList" href=<%= `/?alcohol=${alcoholList[i]}`%>><%= alcoholList[i] %></a>
     <% } %>
-  </div>
+    </p>
   <table>
     <tr>
       <th>NAME</th>
@@ -23,10 +23,18 @@
     </tr>
     <% for (let i=0; i < cocktails.length; i++) { %>
       <tr>
-        <td><%= cocktails[i].name %> <% if (!cocktails[i].isAlcoholic) { %>(non-alcoholic)<% } %><br><%= `${cocktails[i].contains.join(', ')}` %></td>
-        <td><%= cocktails[i].price %> Ft</td>
+        <td class='alcohol'><b><%= cocktails[i].name %></b> <% if (!cocktails[i].isAlcoholic) { %>(non-alcoholic)<% } %><br><%= `${cocktails[i].contains.join(', ')}` %></td>
+        <td class='price'><%= cocktails[i].price %> Ft</td>
       </tr>
     <% } %>
   </table>
+  <script>
+    const td = document.querySelectorAll('td');
+    td.forEach(td => {
+      if (td.innerHTML.indexOf('BEER') != -1) {
+        td.parentElement.setAttribute('class','beer');
+      }
+    });
+  </script>
 </body>
 </html>
