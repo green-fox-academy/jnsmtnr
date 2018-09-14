@@ -1,0 +1,14 @@
+{
+  "name": "my_first_image_gallery",
+  "version": "0.9.9",
+  "description": "My first image gallery",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gallery"
+  ],
+  "author": "istencsaszar",
+  "license": "ISC"
+}
