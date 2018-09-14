@@ -23,8 +23,12 @@
     </tr>
     <% for (let i=0; i < cocktails.length; i++) { %>
       <tr>
-        <td class='alcohol'><b><%= cocktails[i].name %></b> <% if (!cocktails[i].isAlcoholic) { %>(non-alcoholic)<% } %><br><%= `${cocktails[i].contains.join(', ')}` %></td>
-        <td class='price'><%= cocktails[i].price %> Ft</td>
+        <td class='alcohol'><b><%= cocktails[i].name %></b> <% if (!cocktails[i].isAlcoholic) { %>(non-alcoholic)<% } %><br>
+          <%= `${cocktails[i].contains.join(', ')}` %>
+        </td>
+        <td class='price'>
+          <%= cocktails[i].price %> Ft
+        </td>
       </tr>
     <% } %>
   </table>
