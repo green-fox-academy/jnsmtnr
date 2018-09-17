@@ -24,6 +24,22 @@ app.get('/doubling/', (req, res) => {
   };
 });
 
+app.get('/greeter/', (req, res) => {
+  if (req.query.name && req.query.title) {
+    res.json({
+      welcome_message: `Oh, hi there ${req.query.name}, my dear ${req.query.title}!`,
+    });
+  } else if (!req.query.name) {
+    res.json({
+      error: "Please provide a name!",
+    });
+  } else if (!req.query.title) {
+    res.json({
+      error: "Please provide a title!",
+    });
+  };
+});
+
 app.listen(PORT, () => {
   console.log(`server is running, port ${PORT}`);
 });
