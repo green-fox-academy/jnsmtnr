@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Get Giphy!</title>
+</head>
+
+<body>
+  <div>
+
+  </div>
+
+  <script>
+    let myImgArray;
+    fetch(`http://api.giphy.com/v1/gifs/search?api_key=2MlIhyG4XxZ9vB4ZlhQn5pPKznPcs94e&q=cat&limit=16`)
+      .then(function (res) {
+        return res.json();
+      })
+      .then(function (res) {
+        console.log(res.data);
+        myImgArray = res.data;
+        let div = document.querySelector('div');
+        myImgArray.forEach(image => {
+          let a = document.createElement('a');
+          a.setAttribute('href',image.bitly_gif_url);
+          let img = document.createElement('IMG');
+          img.setAttribute('src',image.images.preview_gif.url);
+          a.appendChild(img);
+        div.appendChild(a);
+        })
+      });
+  </script>
+</body>
+
+</html>
