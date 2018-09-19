@@ -1,13 +1,17 @@
 const mysql = require('mysql');
 const connection = mysql.createConnection({
   host: 'localhost',
-  port: 3306,
   user: 'root',
   password: 'asdflkjh',
-  database: 'bookstore',
-  insecureAuth : true,
 });
 connection.connect((err) => {
   if (err) throw err;
   console.log('Connected!');
 });
+
+connection.query('show databases;', (err,row) => {
+  if (err) {console.log(err);}
+  console.log(row);
+})
+
+connection.end();
