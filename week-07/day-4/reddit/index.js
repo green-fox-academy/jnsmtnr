@@ -92,6 +92,23 @@ app.delete('/posts/:id', (req, res) => {
   });
 });
 
+app.put('/posts/:id', (req,res) => {
+  let modifyPost = `UPDATE posts SET title = '${req.body.title}', url = '${req.body.url}'  WHERE id = ${req.params.id}`;
+  connection.query(modifyPost, (err,result) => {
+    if (err) {
+      res.json({ 'error': err.message});
+      return;
+    };
+    connection.query(`SELECT id,title,url,unix_timestamp(timestamp) as timestamp,score FROM posts WHERE id = ${req.params.id}`, (err, result) => {
+      if (err) {
+        res.json({ 'error': err.message });
+        return;
+      }
+      res.status(200).json(result[0]);
+    });
+  })
+})
+
 app.listen(PORT, () => {
   console.log(`the new reddit is ready to take his rightful position, port ${PORT}`);
 });
