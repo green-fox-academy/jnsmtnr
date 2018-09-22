@@ -4,12 +4,12 @@ let image = document.getElementById('main-image');
 
 let imageID = 100;
 
-ButtonRight.addEventListener("click", function() {
+buttonRight.addEventListener("click", function() {
   imageID++;
-  image.style = `background: url('images/test${(imageID%3+1)}.jpg')`
+  image.style = `background: url('images/img${(imageID%3+1)}.jpg')`
 });
 
 buttonLeft.addEventListener("click", function() {
   imageID--;
-  image.style = `background: url('images/test${(imageID%3+1)}.jpg')`
+  image.style = `background: url('images/img${(imageID%3+1)}.jpg')`
 });
