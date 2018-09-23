@@ -23,14 +23,24 @@
         myImgArray = res.data;
         let div = document.querySelector('div');
         myImgArray.forEach(image => {
-          let a = document.createElement('a');
-          a.setAttribute('href',image.bitly_gif_url);
           let img = document.createElement('IMG');
-          img.setAttribute('src',image.images.preview_gif.url);
-          a.appendChild(img);
-        div.appendChild(a);
+          img.setAttribute('src', image.images.fixed_height_small_still.url);
+          let still = img.getAttribute('src');
+          let notStill = still.replace('_s','');
+          let isItStill = true;
+          img.addEventListener('click', () => {
+            if (isItStill) {
+              img.setAttribute('src',notStill);
+            } else {
+              img.setAttribute('src',still);
+            }
+            isItStill = !isItStill;
+          })
+          div.appendChild(img);
         })
       });
+
+
   </script>
 </body>
 
