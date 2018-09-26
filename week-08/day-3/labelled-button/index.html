@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8" />
-  <title>Labelled buttons</title>
-  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <title>Labelled buttons v0.2</title>
+  <link rel="stylesheet" type="text/css" media="screen" href="labelled-button.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous">
 </head>
+
 <body>
-    <i class="far fa-trash-alt"></i>
+  <div>
+    <button data-action="delete">
+      <div class="icon"><i class="far fa-trash-alt"></i></div><div class="text">Delete</div>
+    </button></div>
+  <div><button data-action="confirm">
+      <div class="icon"><i class="fas fa-check"></i></div><div class="text">Sure?</div>
+    </button></div>
 </body>
+
 </html>
