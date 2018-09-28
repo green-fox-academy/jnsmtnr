@@ -3,7 +3,7 @@ const mysql = require('mysql');
 const express = require('express');
 const path = require('path');
 const app = express();
-const PORT = 6000;
+const PORT = 3000;
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
@@ -105,7 +105,7 @@ app.put('/posts/:id', (req,res) => {
         return;
       }
       res.status(200).json(result[0]);
-    });
+    }); 
   })
 })
 
