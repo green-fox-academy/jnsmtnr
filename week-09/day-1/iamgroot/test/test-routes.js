@@ -69,3 +69,21 @@ test('yondu endpoint with parameters', (t) => {
       t.end();
     })
 });
+
+test('rocket endpoint without parameters', (t) => {
+  request(app)
+    .get('/rocket')
+    .expect(400)
+    .expect('Content-Type', /json/)
+    .end((err, res) => {
+      t.error(err, 'No error');
+      t.deepEqual(res.body, {
+        "caliber25": 0,
+        "caliber30": 0,
+        "caliber50": 0,
+        "shipstatus": "empty",
+        "ready": false
+      });
+      t.end();
+    });
+});
