@@ -17,7 +17,11 @@ app.get('/groot', (req, res) => {
 });
 
 app.get('/yondu', (req, res) => {
-  if (req.query.distance && req.query.time) {
+  if (req.query.distance && req.query.time == 0) {
+    res.status(400).json({
+      error: 'Cannot divide by zero'
+    });
+  } else if (req.query.distance && req.query.time) {
     res.status(200).json({
       distance: req.query.distance,
       time: req.query.time,

@@ -55,3 +55,17 @@ test('yondu endpoint with parameters', (t) => {
       t.end();
     })
 });
+
+test('yondu endpoint with parameters', (t) => {
+  request(app)
+    .get('/yondu?distance=100&time=0')
+    .expect(400)
+    .expect('Content-Type', /json/)
+    .end((err, res) => {
+      t.error(err, 'No error');
+      t.deepEqual(res.body, {
+        error: 'Cannot divide by zero',
+      });
+      t.end();
+    })
+});
