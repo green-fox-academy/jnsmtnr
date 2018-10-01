@@ -104,3 +104,37 @@ test('rocket endpoint with parameters', (t) => {
       t.end();
     });
 });
+
+test('rocket endpoint with parameters', (t) => {
+  request(app)
+    .get('/rocket?caliber=.30&amount=7500')
+    .expect(200)
+    .expect('Content-Type', /json/)
+    .end((err, res) => {
+      t.error(err, 'No error');
+      t.deepEqual(res.body, {
+        "received": ".30",
+        "amount": 7500,
+        "shipstatus": "full",
+        "ready": true
+      });
+      t.end();
+    });
+});
+
+test('rocket endpoint with parameters', (t) => {
+  request(app)
+    .get('/rocket?caliber=.25&amount=1000')
+    .expect(200)
+    .expect('Content-Type', /json/)
+    .end((err, res) => {
+      t.error(err, 'No error');
+      t.deepEqual(res.body, {
+        "received": ".25",
+        "amount": 1000,
+        "shipstatus": "overloaded",
+        "ready": false
+      });
+      t.end();
+    });
+});

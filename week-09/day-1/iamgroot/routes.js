@@ -59,9 +59,14 @@ app.get('/rocket', (req, res) => {
     if (shipstatusNumber < 100) {
       shipstatus = `${shipstatusNumber}%`;
     } else if (shipstatusNumber === 100) {
-      shipstatus = 'ready';
+      shipstatus = 'full';
     } else if (shipstatusNumber > 100) {
       shipstatus = 'overloaded';
+    }
+    if (shipstatus == 'full') {
+      ready = true;
+    } else {
+      ready = false;
     }
     res.status(200).json({
       "received": received,
