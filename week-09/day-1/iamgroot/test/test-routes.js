@@ -27,3 +27,15 @@ test('groot endpoint with message', (t) => {
       t.end();
     })
 });
+
+test('yondu endpoint', (t) => {
+  request(app)
+    .get('/yondu')
+    .expect(400)
+    .expect('Content-Type', /json/)
+    .end((err, res) => {
+      t.error(err, 'No error');
+      t.same(res.body.error, 'No or wrong parameters');
+      t.end();
+    })
+});
