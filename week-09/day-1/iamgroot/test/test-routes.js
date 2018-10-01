@@ -23,7 +23,7 @@ test('groot endpoint with message', (t) => {
     .expect('Content-Type', /json/)
     .end((err, res) => {
       t.error(err, 'No error');
-      t.deepEqual(res.body, {received: 'hello', translated: 'I am Groot!'});
+      t.deepEqual(res.body, { received: 'hello', translated: 'I am Groot!' });
       t.end();
     })
 });
@@ -36,6 +36,22 @@ test('yondu endpoint', (t) => {
     .end((err, res) => {
       t.error(err, 'No error');
       t.same(res.body.error, 'No or wrong parameters');
+      t.end();
+    })
+});
+
+test('yondu endpoint with parameters', (t) => {
+  request(app)
+    .get('/yondu?distance=100&time=10')
+    .expect(200)
+    .expect('Content-Type', /json/)
+    .end((err, res) => {
+      t.error(err, 'No error');
+      t.deepEqual(res.body, {
+        distance: '100',
+        time: '10',
+        speed: '10',
+      });
       t.end();
     })
 });
