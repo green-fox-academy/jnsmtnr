@@ -16,4 +16,14 @@ app.get('/groot', (req, res) => {
   }
 });
 
+app.get('/yondu', (req, res) => {
+  if (req.query.distance && req.query.time) {
+
+  } else {
+    res.status(400).json({
+      error: 'No or wrong parameters',
+    })
+  }
+})
+
 module.exports = app;
