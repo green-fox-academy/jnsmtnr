@@ -42,7 +42,33 @@ app.get('/yondu', (req, res) => {
 
 app.get('/rocket', (req, res) => {
   if (req.query.caliber && req.query.amount) {
-    res.send('not yet implemented');
+    let received = req.query.caliber;
+    let amount = Number(req.query.amount);
+    switch (received) {
+      case '.50':
+        caliber50 += amount;
+        break;
+      case '.30':
+        caliber50 += amount;
+        break;
+      case '.25':
+        caliber50 += amount;
+        break;
+    };
+    let shipstatusNumber = (caliber25 + caliber30 + caliber50) / 125;
+    if (shipstatusNumber < 100) {
+      shipstatus = `${shipstatusNumber}%`;
+    } else if (shipstatusNumber === 100) {
+      shipstatus = 'ready';
+    } else if (shipstatusNumber > 100) {
+      shipstatus = 'overloaded';
+    }
+    res.status(200).json({
+      "received": received,
+      "amount": amount,
+      "shipstatus": shipstatus,
+      "ready": ready
+    })
   } else {
     res.status(400).json({
       "caliber25": caliber25,
