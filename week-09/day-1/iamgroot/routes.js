@@ -7,11 +7,11 @@ app.get('/groot', (req, res) => {
   if (req.query.message) {
     res.status(200).json({
       received: req.query.message,
-      translated: 'I am Groot',
+      translated: 'I am Groot!',
     })
   } else {
     res.status(400).json({
-      error: 'I am Groot',
+      error: 'I am Groot!',
     })
   }
 });
